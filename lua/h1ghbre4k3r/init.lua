@@ -10,11 +10,11 @@ vim.opt.guifont = "MesloLGS Nerd Font Mono:h13"
 vim.o.mouse = 'a'
 --
 -- Enable break indent
--- vim.o.breakindent = true
+vim.o.breakindent = true
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
 vim.opt.expandtab = true
--- vim.o.smartindent = true
+vim.o.smartindent = true
 
 -- Save undo history
 vim.o.undofile = true
