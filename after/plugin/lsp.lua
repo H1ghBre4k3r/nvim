@@ -81,6 +81,9 @@ lsp.on_attach(function(client, bufnr)
         vim.lsp.buf.declaration()
     end)
 
+    if capabilities.renameProvider then
+        vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end)
+    end
     -- local opts = { buffer = bufnr, remap = false }
     -- if client.name == "eslint" then
     --     vim.cmd.LspStop('eslint')

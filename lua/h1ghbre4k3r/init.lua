@@ -22,6 +22,10 @@ vim.opt.smartindent = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
+-- Decrease update time
+vim.o.updatetime = 250
+vim.wo.signcolumn = 'yes'
+
 -- Save undo history
 vim.o.undofile = true
 

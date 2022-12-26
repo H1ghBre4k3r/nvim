@@ -96,6 +96,14 @@ return require('packer').startup({ function(use)
             vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
         end
     }
+
+    use {
+        'prettier/vim-prettier',
+        run = "yarn install --frozen-lockfile --production",
+        ft = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json',
+            'graphql', 'markdown', 'vue', 'svelte',
+            'yaml', 'html' }
+    }
 end,
     config = {
         display = {
