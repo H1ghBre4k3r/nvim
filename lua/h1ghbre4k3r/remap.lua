@@ -24,3 +24,7 @@ vim.keymap.set("n", "N", "Nzzzv");
 -- close currently open buffers
 vim.keymap.set("n", "<leader>c", "<cmd>bdelete<cr>");
 vim.keymap.set("n", "<leader>C", "<cmd>bdelete!<cr>");
+
+-- cycle through buffers
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>");
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>");
