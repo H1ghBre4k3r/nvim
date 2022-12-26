@@ -14,3 +14,13 @@ vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<cr>");
 
 -- create a new file
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>");
+
+-- fancy navigation through a file
+vim.keymap.set("n", "<C-d>", [[<C-d>zz]]);
+vim.keymap.set("n", "<C-u>", [[<C-u>zz]]);
+vim.keymap.set("n", "n", "nzzzv");
+vim.keymap.set("n", "N", "Nzzzv");
+
+-- close currently open buffers
+vim.keymap.set("n", "<leader>c", "<cmd>bdelete<cr>");
+vim.keymap.set("n", "<leader>C", "<cmd>bdelete!<cr>");

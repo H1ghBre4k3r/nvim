@@ -1,6 +1,8 @@
 local lsp = require('lsp-zero')
-local snip_status_ok, luasnip = require("luasnip")
 local lspkind = require("lspkind")
+
+local border_opts =
+{ border = "single", winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None" }
 
 lsp.preset('recommended')
 
@@ -59,6 +61,10 @@ lsp.setup_nvim_cmp({
             Operator = "",
             TypeParameter = ""
         }) or nil,
+    },
+    window = {
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
     },
 })
 

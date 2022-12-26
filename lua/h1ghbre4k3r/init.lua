@@ -13,9 +13,14 @@ vim.opt.mouse = 'a'
 -- Enable break indent
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+
+-- keep some padding while scrolling
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
 -- Save undo history
 vim.o.undofile = true
