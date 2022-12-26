@@ -40,10 +40,7 @@ return require('packer').startup({ function(use)
 
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
-    use {
-        'lewis6991/gitsigns.nvim',
-        -- tag = 'release', -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-    }
+    use "airblade/vim-gitgutter"
 
     use {
         "tpope/vim-fugitive"
