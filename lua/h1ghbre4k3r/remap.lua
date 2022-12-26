@@ -8,3 +8,9 @@ vim.keymap.set('t', '<esc>', [[<C-\><C-n>]]);
 -- diagnostics
 vim.keymap.set('n', '<leader>lD', function() require("telescope.builtin").diagnostics() end);
 vim.keymap.set('n', '<leader>ld', function() vim.diagnostic.open_float() end);
+
+-- remove all highlights
+vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<cr>");
+
+-- create a new file
+vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>");
