@@ -16,3 +16,5 @@ end, { desc = "Search words in all files" })
 vim.keymap.set("n", "<leader>lR", function()
     builtin.lsp_references()
 end)
+
+require("telescope").load_extension("ui-select")
