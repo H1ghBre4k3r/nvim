@@ -18,6 +18,10 @@ vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- smartly split the windows
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 -- keep some padding while scrolling
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
