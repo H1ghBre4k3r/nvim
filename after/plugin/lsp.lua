@@ -32,6 +32,12 @@ lsp.setup_nvim_cmp({
     completion = {
         keyword_length = 1,
     },
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'luasnip' },
+    },
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format({
@@ -68,6 +74,8 @@ lsp.setup_nvim_cmp({
     },
 })
 
+local lsp_status = require("lsp-status")
+
 lsp.on_attach(function(client, bufnr)
     local capabilities = client.server_capabilities
 
@@ -84,26 +92,25 @@ lsp.on_attach(function(client, bufnr)
     if capabilities.renameProvider then
         vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end)
     end
-    -- local opts = { buffer = bufnr, remap = false }
-    -- if client.name == "eslint" then
-    --     vim.cmd.LspStop('eslint')
-    --     return
-    -- end
-    --
-    -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    -- vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-    -- vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-    -- vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-    -- vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-    -- vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-    -- vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-    -- vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-    -- vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+
+    lsp_status.on_attach(client)
 end)
+
 lsp.setup()
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-    desc = "",
-    command = "lua vim.lsp.buf.format()"
+local servers = require("lspconfig");
+
+servers["tsserver"].setup({
+    settings = {
+        javascript = {
+            preferences = {
+                importModuleSpecifier = "absolute"
+            }
+        },
+        typescript = {
+            preferences = {
+                importModuleSpecifier = "absolute"
+            }
+        }
+    }
 })

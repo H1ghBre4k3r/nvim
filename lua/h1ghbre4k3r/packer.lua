@@ -4,6 +4,7 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup({ function(use)
     use 'wbthomason/packer.nvim'
 
+    -- Fancy UI popups
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = {
@@ -19,6 +20,7 @@ return require('packer').startup({ function(use)
         end
     }
 
+    -- Fancy line at the bottom
     use {
         'vim-airline/vim-airline',
         config = function()
@@ -30,6 +32,7 @@ return require('packer').startup({ function(use)
         'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }
     }
 
+    -- Terminal popup
     use {
         "akinsho/toggleterm.nvim",
         tag = '*',
@@ -40,9 +43,9 @@ return require('packer').startup({ function(use)
 
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
-    use "airblade/vim-gitgutter"
-
+    -- Git stuff
     use {
+        "airblade/vim-gitgutter",
         "tpope/vim-fugitive"
     }
 
@@ -53,6 +56,7 @@ return require('packer').startup({ function(use)
         end
     }
 
+    -- LSP stuff
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -75,6 +79,16 @@ return require('packer').startup({ function(use)
         }
     }
 
+    use "onsails/lspkind.nvim"
+
+    use 'nvim-lua/lsp-status.nvim'
+
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = { "nvim-lua/plenary.nvim", "jayp0521/mason-null-ls.nvim" },
+    }
+
+    -- Comments all the way down
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -82,8 +96,7 @@ return require('packer').startup({ function(use)
         end
     }
 
-    use "onsails/lspkind.nvim"
-
+    -- Cool file explorer
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -97,13 +110,6 @@ return require('packer').startup({ function(use)
         end
     }
 
-    use {
-        'prettier/vim-prettier',
-        run = "yarn install --frozen-lockfile --production",
-        ft = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json',
-            'graphql', 'markdown', 'vue', 'svelte',
-            'yaml', 'html' }
-    }
 end,
     config = {
         display = {
