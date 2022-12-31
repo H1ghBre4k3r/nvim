@@ -89,11 +89,11 @@ lsp.on_attach(function(client, bufnr)
 		vim.lsp.buf.declaration()
 	end)
 
-	if capabilities.renameProvider then
-		vim.keymap.set("n", "<leader>lr", function()
-			vim.lsp.buf.rename()
-		end)
-	end
+	-- if capabilities.renameProvider then
+	vim.keymap.set("n", "<leader>lr", function()
+		vim.lsp.buf.rename()
+	end)
+	-- end
 
 	lsp_status.on_attach(client)
 end)
