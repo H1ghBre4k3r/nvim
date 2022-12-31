@@ -3,8 +3,9 @@ local mason_null_ls = require("mason-null-ls");
 mason_null_ls.setup({
     ensure_installed = {
         "prettier",
-        "stylue",
-        "eslint_d"
+        "stylua",
+        "gofmt",
+        "rustfmt"
     }
 })
 
@@ -20,6 +21,8 @@ null_ls.setup({
     sources = {
         formatting.prettier,
         formatting.stylua,
+        formatting.gofmt,
+        formatting.rustfmt
         -- diagnostics.eslint,
     },
     on_attach = function(current_client, bufnr)
