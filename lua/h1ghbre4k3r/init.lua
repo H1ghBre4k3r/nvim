@@ -8,7 +8,7 @@ vim.opt.guifont = "MesloLGS Nerd Font Mono:h13"
 vim.opt.cursorline = true
 
 -- Enable mouse mode
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -28,7 +28,7 @@ vim.opt.sidescrolloff = 8
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Save undo history
 vim.o.undofile = true
@@ -44,3 +44,5 @@ vim.g.nord_italic = 1
 vim.g.nord_italic_comments = 1
 
 vim.g.airline_powerline_fonts = true
+
+vim.api.nvim_command("au BufRead,BufNewFile *.why   setfiletype y-lang")
