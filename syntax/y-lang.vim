@@ -1,19 +1,42 @@
-syn keyword basicKeywords if else let 
+syn keyword whyKeyword let  
 
-hi def link basicKeywords Statement
+syn keyword whyConditional if else 
 
-syn match identifiers '"([a-zA-z]|_)*"'
+syn match whyOperator display "\%(+\|-\|/\|*\|=\|:=\|\^\|&\||\|!\|>\|<\|%\)=\?"
 
-hi def link identifiers Identifier
+syn match whyIdentifier '"([a-zA-z]|_)*"'
 
-syn match yComment "//.*$"
-syn match yComment "/\*(.|(\\r\\n|\\r|\\n))*\*/"
+syn match whyLineComment "//.*$"
+syn region whyBlockComment start=+/\*+ end=+\*/+
 
-hi def link yComment Comment
+syn match whyNumbers '\d\+'
+
+syn region whyStrings start=+"+ end=+"+ end=+$+ 
+
+syn keyword whyBoolean true false
+
+syn keyword	whyType int str bool void
+
+syn match whyFuncCall "\w\(\w\)*("he=e-1,me=e-1
 
 
-syn match yNumbers '\d\+'
-hi def link yNumbers Number
+hi def link whyKeyword Keyword 
 
-syn match yStrings '".*"'
-hi def link yStrings String
+hi def link whyConditional Conditional
+
+hi def link whyOperator Operator
+
+hi def link whyIdentifier Identifier
+
+hi def link whyLineComment Comment
+hi def link whyBlockComment Comment
+
+hi def link whyNumbers Number
+
+hi def link whyStrings String
+
+hi def link whyType Type
+
+hi def link whyBoolean Boolean
+
+hi def link whyFuncCall Function
