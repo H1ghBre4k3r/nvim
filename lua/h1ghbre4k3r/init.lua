@@ -46,3 +46,5 @@ vim.g.nord_italic_comments = 1
 vim.g.airline_powerline_fonts = true
 
 vim.api.nvim_command("au BufRead,BufNewFile *.why   setfiletype y-lang")
+
+vim.opt.termguicolors = true
