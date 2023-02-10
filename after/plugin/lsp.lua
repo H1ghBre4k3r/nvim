@@ -76,6 +76,7 @@ lsp.setup_nvim_cmp({
 
 local lsp_status = require("lsp-status")
 
+local navic = require("nvim-navic")
 lsp.on_attach(function(client, bufnr)
 	local capabilities = client.server_capabilities
 
@@ -130,4 +131,7 @@ lspconfig.rust_analyzer.setup({
 			},
 		},
 	},
+	on_attach = function(client, bufnr)
+		navic.attach(client, bufnr)
+	end,
 })

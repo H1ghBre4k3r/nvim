@@ -48,3 +48,5 @@ vim.g.airline_powerline_fonts = true
 vim.api.nvim_command("au BufRead,BufNewFile *.why   setfiletype y-lang")
 
 vim.opt.termguicolors = true
+
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

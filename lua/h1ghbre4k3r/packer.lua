@@ -114,6 +114,10 @@ return require("packer").startup({
 		})
 		use({ "stevearc/dressing.nvim" })
 		use("andweeb/presence.nvim")
+		use({
+			"SmiteshP/nvim-navic",
+			requires = "neovim/nvim-lspconfig",
+		})
 	end,
 	config = {
 		display = {
