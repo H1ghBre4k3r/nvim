@@ -1,4 +1,4 @@
-syn keyword whyKeyword let  
+syn keyword whyKeyword let mut declare import 
 
 syn keyword whyConditional if else 
 

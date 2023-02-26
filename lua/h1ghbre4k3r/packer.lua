@@ -118,6 +118,10 @@ return require("packer").startup({
 			"SmiteshP/nvim-navic",
 			requires = "neovim/nvim-lspconfig",
 		})
+
+		use("famiu/bufdelete.nvim")
+		-- Packer
+		use("kdheepak/lazygit.nvim")
 	end,
 	config = {
 		display = {
