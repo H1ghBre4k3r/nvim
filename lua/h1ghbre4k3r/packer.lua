@@ -122,6 +122,13 @@ return require("packer").startup({
 		use("famiu/bufdelete.nvim")
 		-- Packer
 		use("kdheepak/lazygit.nvim")
+
+		use({
+			"H1ghBre4k3r/y-lang.nvim",
+			config = function()
+				require("y-lang.nvim")
+			end,
+		})
 	end,
 	config = {
 		display = {
