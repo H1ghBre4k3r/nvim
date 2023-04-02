@@ -32,7 +32,9 @@ return require("packer").startup({
 
 		use({
 			"nvim-treesitter/nvim-treesitter",
-			{ run = ":TSUpdate" },
+			{
+				run = ":TSUpdate",
+			},
 		})
 
 		-- Terminal popup
@@ -50,6 +52,7 @@ return require("packer").startup({
 		use({
 			"airblade/vim-gitgutter",
 			"tpope/vim-fugitive",
+			"kdheepak/lazygit.nvim",
 		})
 
 		use({
@@ -112,21 +115,24 @@ return require("packer").startup({
 				vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 			end,
 		})
-		use({ "stevearc/dressing.nvim" })
+
+		use("stevearc/dressing.nvim")
+
 		use("andweeb/presence.nvim")
+
 		use({
 			"SmiteshP/nvim-navic",
 			requires = "neovim/nvim-lspconfig",
 		})
 
+		use("wellle/context.vim")
+
 		use("famiu/bufdelete.nvim")
-		-- Packer
-		use("kdheepak/lazygit.nvim")
 
 		use({
 			"H1ghBre4k3r/y-lang.nvim",
 			config = function()
-				require("y-lang.nvim")
+				require("y-lang")
 			end,
 		})
 	end,

@@ -27,7 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 100
 vim.wo.signcolumn = "yes"
 
 -- Save undo history
@@ -48,3 +48,5 @@ vim.g.airline_powerline_fonts = true
 vim.opt.termguicolors = true
 
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
+vim.g.context_enabled = 1
