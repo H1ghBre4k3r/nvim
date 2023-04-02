@@ -30,13 +30,6 @@ return require("packer").startup({
 			end,
 		})
 
-		use({
-			"nvim-treesitter/nvim-treesitter",
-			{
-				run = ":TSUpdate",
-			},
-		})
-
 		-- Terminal popup
 		use({
 			"akinsho/toggleterm.nvim",
@@ -94,6 +87,14 @@ return require("packer").startup({
 			requires = { "nvim-lua/plenary.nvim", "jayp0521/mason-null-ls.nvim" },
 		})
 
+		-- more advanced syntax highlighting
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			{
+				run = ":TSUpdate",
+			},
+		})
+
 		-- Comments all the way down
 		use({
 			"numToStr/Comment.nvim",
@@ -116,17 +117,21 @@ return require("packer").startup({
 			end,
 		})
 
+		-- re-design standard vim ui
 		use("stevearc/dressing.nvim")
 
 		use("andweeb/presence.nvim")
 
+		-- show current location in winbar
 		use({
 			"SmiteshP/nvim-navic",
 			requires = "neovim/nvim-lspconfig",
 		})
 
+		-- show nested location with line numbers in winbar
 		use("wellle/context.vim")
 
+		-- more advanced buffer deletion
 		use("famiu/bufdelete.nvim")
 
 		use({
