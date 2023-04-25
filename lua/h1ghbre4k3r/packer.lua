@@ -51,7 +51,7 @@ return require("packer").startup({
 		use({
 			"windwp/nvim-autopairs",
 			config = function()
-				require("nvim-autopairs").setup({})
+				require("nvim-autopairs").setup({ map_cr = true })
 			end,
 		})
 
@@ -68,9 +68,10 @@ return require("packer").startup({
 				{ "hrsh7th/nvim-cmp" },
 				{ "hrsh7th/cmp-buffer" },
 				{ "hrsh7th/cmp-path" },
-				{ "saadparwaiz1/cmp_luasnip" },
 				{ "hrsh7th/cmp-nvim-lsp" },
+				{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 				{ "hrsh7th/cmp-nvim-lua" },
+				{ "saadparwaiz1/cmp_luasnip" },
 
 				-- Snippets
 				{ "L3MON4D3/LuaSnip" },
@@ -129,7 +130,7 @@ return require("packer").startup({
 		})
 
 		-- show nested location with line numbers in winbar
-		use("wellle/context.vim")
+		-- use("wellle/context.vim")
 
 		-- more advanced buffer deletion
 		use("famiu/bufdelete.nvim")
@@ -140,6 +141,8 @@ return require("packer").startup({
 				require("y-lang")
 			end,
 		})
+
+		use("simrat39/rust-tools.nvim")
 	end,
 	config = {
 		display = {

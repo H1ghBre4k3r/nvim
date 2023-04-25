@@ -41,3 +41,5 @@ vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>")
 
 -- setup mapping to call :LazyGit
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+
+vim.keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")

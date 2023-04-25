@@ -1,9 +1,6 @@
 local lsp = require("lsp-zero")
 local lspkind = require("lspkind")
 
-local border_opts =
-	{ border = "single", winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None" }
-
 lsp.preset("recommended")
 
 local cmp = require("cmp")
@@ -12,9 +9,6 @@ lsp.setup_nvim_cmp({
 	mapping = cmp.mapping.preset.insert({
 		["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-		-- ["<Tab>"] = cmp.mapping(function(fallback)
-		--     fallback()
-		-- end),
 		["<Esc>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.close()
@@ -29,17 +23,15 @@ lsp.setup_nvim_cmp({
 		behavior = cmp.ConfirmBehavior.Insert,
 		select = false,
 	},
-	completion = {
-		keyword_length = 1,
-	},
 	sources = {
-		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp", keyword_length = 3 },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "luasnip" },
 	},
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
+		fields = { "menu", "abbr", "kind" },
 		format = lspkind.cmp_format({
 			Text = "",
 			Method = "",
@@ -69,8 +61,8 @@ lsp.setup_nvim_cmp({
 		}) or nil,
 	},
 	window = {
-		completion = cmp.config.window.bordered(border_opts),
-		documentation = cmp.config.window.bordered(border_opts),
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 })
 
@@ -97,6 +89,7 @@ lsp.on_attach(function(client, bufnr)
 	-- end
 
 	lsp_status.on_attach(client)
+	navic.attach(client, bufnr)
 end)
 
 lsp.setup()
@@ -116,22 +109,4 @@ lspconfig.tsserver.setup({
 			},
 		},
 	},
-})
-
-lspconfig.rust_analyzer.setup({
-	settings = {
-		["rust-analyzer"] = {
-			completion = {
-				callable = {
-					snippets = "none",
-				},
-			},
-			checkOnSave = {
-				command = "clippy",
-			},
-		},
-	},
-	on_attach = function(client, bufnr)
-		navic.attach(client, bufnr)
-	end,
 })
