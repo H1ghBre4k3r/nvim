@@ -7,10 +7,10 @@ require("rust-tools").setup({
 						snippets = "none",
 					},
 				},
-				-- check = {
-				-- 	command = "clippy",
-				-- 	extraArgs = { "--all", "--", "-W", "clippy::all" },
-				-- },
+				check = {
+					command = "clippy",
+					extraArgs = { "--all", "--", "-W", "clippy::all" },
+				},
 			},
 		},
 	},
