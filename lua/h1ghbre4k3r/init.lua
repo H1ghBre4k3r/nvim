@@ -15,8 +15,9 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.breakindent = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
+vim.opt.cindent = true
+-- vim.opt.autoindent = true
+-- vim.opt.smartindent = true
 
 -- smartly split the windows
 vim.opt.splitright = true
@@ -48,8 +49,8 @@ vim.g.airline_powerline_fonts = true
 vim.opt.termguicolors = true
 
 -- enable navic display in winbar
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+-- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- enable context.vim to show nested location
-vim.g.context_enabled = 1
-vim.g.context_add_mappings = 0
+-- vim.g.context_enabled = 1
+-- vim.g.context_add_mappings = 0

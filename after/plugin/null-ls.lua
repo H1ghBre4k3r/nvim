@@ -1,5 +1,7 @@
 local mason_null_ls = require("mason-null-ls")
 
+local lsp_status = require("lsp-status")
+
 mason_null_ls.setup({
 	ensure_installed = {
 		"prettier",
@@ -64,5 +66,6 @@ null_ls.setup({
 				end,
 			})
 		end
+		lsp_status.on_attach(current_client)
 	end,
 })

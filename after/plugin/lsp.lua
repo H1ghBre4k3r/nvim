@@ -1,11 +1,11 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
 local lspkind = require("lspkind")
 
-lsp.preset("recommended")
+lsp_zero.preset("recommended")
 
 local cmp = require("cmp")
 
-lsp.setup_nvim_cmp({
+lsp_zero.setup_nvim_cmp({
 	mapping = cmp.mapping.preset.insert({
 		["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -24,8 +24,8 @@ lsp.setup_nvim_cmp({
 		select = false,
 	},
 	sources = {
-		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lsp", keyword_length = 3 },
+		-- { name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "luasnip" },
@@ -66,33 +66,11 @@ lsp.setup_nvim_cmp({
 	},
 })
 
-local lsp_status = require("lsp-status")
-
-local navic = require("nvim-navic")
-lsp.on_attach(function(client, bufnr)
-	local capabilities = client.server_capabilities
-
-	vim.keymap.set("n", "<leader>la", function()
-		vim.lsp.buf.code_action()
-	end)
-	vim.keymap.set("v", "<leader>la", function()
-		vim.lsp.buf.code_action()
-	end)
-	vim.keymap.set("n", "<leader>gD", function()
-		vim.lsp.buf.declaration()
-	end)
-
-	-- if capabilities.renameProvider then
-	vim.keymap.set("n", "<leader>lr", function()
-		vim.lsp.buf.rename()
-	end)
-	-- end
-
-	lsp_status.on_attach(client)
-	navic.attach(client, bufnr)
-end)
-
-lsp.setup()
+-- local navic = require("nvim-navic")
+-- lsp_zero.on_attach(function(client, bufnr)
+-- 	navic.attach(client, bufnr)
+-- end)
+lsp_zero.setup()
 
 local lspconfig = require("lspconfig")
 

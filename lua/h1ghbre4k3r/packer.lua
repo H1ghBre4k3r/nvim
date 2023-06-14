@@ -22,6 +22,13 @@ return require("packer").startup({
 			end,
 		})
 
+		-- use({
+		-- 	"catppuccin/vim",
+		-- 	config = function()
+		-- 		vim.cmd.colorscheme("catppuccin_mocha")
+		-- 	end,
+		-- })
+
 		-- Fancy line at the bottom
 		use({
 			"vim-airline/vim-airline",
@@ -137,12 +144,22 @@ return require("packer").startup({
 
 		use({
 			"H1ghBre4k3r/y-lang.nvim",
+			-- "~/git/y-lang.nvim",
 			config = function()
 				require("y-lang")
 			end,
 		})
 
 		use("simrat39/rust-tools.nvim")
+
+		use({
+			"folke/neodev.nvim",
+			config = function()
+				require("neodev").setup({
+					-- add any options here, or leave empty to use the default settings
+				})
+			end,
+		})
 	end,
 	config = {
 		display = {
