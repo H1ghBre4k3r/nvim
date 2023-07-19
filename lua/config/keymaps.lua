@@ -46,3 +46,10 @@ vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>")
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 
 vim.keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+
+vim.keymap.set("n", "<leader>la", function()
+  vim.lsp.buf.code_action()
+end)
+vim.keymap.set("v", "<leader>la", function()
+  vim.lsp.buf.code_action()
+end)

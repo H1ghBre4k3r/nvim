@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  opts = {},
   keys = {
     {
       "<leader>e",
