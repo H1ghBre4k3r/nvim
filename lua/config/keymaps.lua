@@ -53,3 +53,7 @@ end)
 vim.keymap.set("v", "<leader>la", function()
   vim.lsp.buf.code_action()
 end)
+
+vim.keymap.set("n", "<leader>lr", function()
+  vim.lsp.buf.rename()
+end)
