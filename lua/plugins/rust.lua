@@ -14,6 +14,9 @@ return {
               command = "clippy",
               extraArgs = { "--all", "--", "-W", "clippy::all" },
             },
+            -- cargo = {
+            --   allFeatures = true,
+            -- },
           },
         },
       },

@@ -57,3 +57,7 @@ end)
 vim.keymap.set("n", "<leader>lr", function()
   vim.lsp.buf.rename()
 end)
+
+vim.keymap.set("n", "<leader>/", function()
+  require("Comment.api").toggle.linewise.current()
+end)
