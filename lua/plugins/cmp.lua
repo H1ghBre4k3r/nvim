@@ -58,6 +58,15 @@ return {
         },
       },
       sorting = defaults.sorting,
+      window = {
+        completion = {
+          border = "rounded",
+        },
+        documentation = {
+          winhighlight = "Normal:CmpDocNormal",
+          border = "double",
+        },
+      },
     }
   end,
 }
