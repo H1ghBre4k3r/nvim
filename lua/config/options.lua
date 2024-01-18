@@ -51,3 +51,16 @@ vim.g.airline_powerline_fonts = true
 vim.opt.termguicolors = true
 --
 -- vim.api.nvim_command("filetype plugin indent off")
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "BufWrite" }, {
+  pattern = "*.wgsl",
+  callback = function()
+    vim.bo.filetype = "wgsl"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "BufWrite" }, {
+  pattern = "*.s",
+  callback = function()
+    vim.bo.filetype = "arm"
+  end,
+})

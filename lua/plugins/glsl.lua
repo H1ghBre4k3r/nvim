@@ -7,6 +7,7 @@ return {
     opts = {
       servers = {
         glsl_analyzer = {},
+        wgsl_analyzer = {},
       },
       setup = {},
     },
