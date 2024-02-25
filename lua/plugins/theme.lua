@@ -1,7 +1,8 @@
 return {
   {
     "catppuccin/nvim",
-    config = function()
+    enabled = true,
+    init = function()
       local catppuccin = require("catppuccin")
 
       catppuccin.setup({

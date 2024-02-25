@@ -1,6 +1,8 @@
 {
   "extras": [
     "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.lang.cmake",
+    "lazyvim.plugins.extras.lang.elixir",
     "lazyvim.plugins.extras.lang.rust"
   ],
   "news": {

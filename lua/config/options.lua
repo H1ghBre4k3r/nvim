@@ -26,7 +26,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- keep some padding while scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 16
 vim.opt.sidescrolloff = 8
 
 -- Decrease update time
