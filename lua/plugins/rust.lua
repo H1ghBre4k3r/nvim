@@ -1,25 +1,54 @@
 return {
-  "simrat39/rust-tools.nvim",
-  config = function()
-    require("rust-tools").setup({
-      server = {
-        settings = {
-          ["rust-analyzer"] = {
-            completion = {
-              callable = {
-                snippets = "none",
-              },
+  "mrcjkb/rustaceanvim",
+  version = "^4", -- Recommended
+  ft = { "rust" },
+  dependencies = {
+    {
+      "lvimuser/lsp-inlayhints.nvim",
+      opts = {},
+      config = function()
+        require("lsp-inlayhints").setup()
+      end,
+    },
+  },
+  opts = {
+    server = {
+      on_attach = function(client, bufnr)
+        vim.keymap.set("n", "<leader>cR", function()
+          vim.cmd.RustLsp("codeAction")
+        end, { desc = "Code Action", buffer = bufnr })
+        vim.keymap.set("n", "<leader>dr", function()
+          vim.cmd.RustLsp("debuggables")
+        end, { desc = "Rust debuggables", buffer = bufnr })
+        require("lsp-inlayhints").on_attach(client, bufnr)
+      end,
+      default_settings = {
+        -- rust-analyzer language server configuration
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+            loadOutDirsFromCheck = true,
+            runBuildScripts = true,
+          },
+          -- Add clippy lints for Rust.
+          checkOnSave = {
+            allFeatures = true,
+            command = "clippy",
+            extraArgs = { "--no-deps" },
+          },
+          procMacro = {
+            enable = true,
+            ignored = {
+              ["async-trait"] = { "async_trait" },
+              ["napi-derive"] = { "napi" },
+              ["async-recursion"] = { "async_recursion" },
             },
-            check = {
-              command = "clippy",
-              extraArgs = { "--all", "--", "-W", "clippy::all" },
-            },
-            -- cargo = {
-            --   allFeatures = true,
-            -- },
           },
         },
       },
-    })
+    },
+  },
+  config = function(_, opts)
+    vim.g.rustaceanvim = vim.tbl_deep_extend("force", {}, opts or {})
   end,
 }
