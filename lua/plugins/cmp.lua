@@ -13,8 +13,9 @@ return {
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
     return {
+      preselect = cmp.PreselectMode.None,
       completion = {
-        completeopt = "menu,menuone,noinsert",
+        completeopt = "menuone,menu,noinsert",
       },
       snippet = {
         expand = function(args)
