@@ -30,6 +30,9 @@ return {
               warnings = { "undercurl" },
               information = { "undercurl" },
             },
+            inlay_hints = {
+              background = true,
+            },
           },
           navic = { enabled = true, custom_bg = "lualine" },
           neotest = true,
@@ -45,6 +48,7 @@ return {
         custom_highlights = function(_colors)
           return {
             CmpDocNormal = { bg = "#414559" },
+            NormalFloat = { bg = "#414559" },
           }
         end,
       })

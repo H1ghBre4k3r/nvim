@@ -35,8 +35,10 @@ vim.keymap.set("n", "<leader>c", function()
   require("bufdelete").bufdelete(0, false)
 end)
 vim.keymap.set("n", "<leader>C", function()
-  require("bufdelete").bufdelete(0, true)
-end)
+  require("bufdelete").bufdelete(0, false)
+end, {
+  desc = "Close Buffer",
+})
 
 -- cycle through buffers
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>")

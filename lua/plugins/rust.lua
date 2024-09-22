@@ -2,25 +2,16 @@ return {
   "mrcjkb/rustaceanvim",
   version = "^4", -- Recommended
   ft = { "rust" },
-  dependencies = {
-    {
-      "lvimuser/lsp-inlayhints.nvim",
-      opts = {},
-      config = function()
-        require("lsp-inlayhints").setup()
-      end,
-    },
-  },
   opts = {
     server = {
-      on_attach = function(client, bufnr)
+      on_attach = function(_, bufnr)
         vim.keymap.set("n", "<leader>cR", function()
           vim.cmd.RustLsp("codeAction")
         end, { desc = "Code Action", buffer = bufnr })
         vim.keymap.set("n", "<leader>dr", function()
           vim.cmd.RustLsp("debuggables")
         end, { desc = "Rust debuggables", buffer = bufnr })
-        require("lsp-inlayhints").on_attach(client, bufnr)
+        -- require("lsp-inlayhints").on_attach(client, bufnr)
       end,
       default_settings = {
         -- rust-analyzer language server configuration
