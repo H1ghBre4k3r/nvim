@@ -47,7 +47,7 @@ vim.g.nord_italic = 1
 vim.g.nord_italic_comments = 1
 
 vim.g.airline_powerline_fonts = true
-
+vim.g.snacks_animate = false
 vim.opt.termguicolors = true
 --
 -- vim.api.nvim_command("filetype plugin indent off")
