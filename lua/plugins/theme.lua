@@ -6,7 +6,7 @@ return {
       local catppuccin = require("catppuccin")
 
       catppuccin.setup({
-        transparent_background = false,
+        transparent_background = true,
         integrations = {
           aerial = true,
           alpha = true,
