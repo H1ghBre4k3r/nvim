@@ -188,9 +188,7 @@ vim.pack.add {
   { src = 'https://github.com/windwp/nvim-autopairs' },
   { src = 'https://github.com/akinsho/toggleterm.nvim' },
   { src = 'https://github.com/famiu/bufdelete.nvim' },
-  { src = 'https://github.com/echasnovski/mini.tabline' },
   { src = 'https://github.com/kdheepak/lazygit.nvim' },
   { src = 'https://github.com/numToStr/Comment.nvim' },
-  { src = 'https://github.com/echasnovski/mini.notify' },
   { src = 'https://github.com/folke/noice.nvim' },
 }

@@ -14,3 +14,4 @@ statusline.section_location = function()
 end
 
 require('mini.notify').setup()
+require('mini.indentscope').setup()
