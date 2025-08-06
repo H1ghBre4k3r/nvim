@@ -14,6 +14,8 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+vim.o.winborder = 'rounded'
+
 -- Enable break indent
 vim.o.breakindent = true
 
@@ -49,7 +51,7 @@ vim.opt.listchars = {
 vim.o.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 16
@@ -180,7 +182,7 @@ vim.pack.add {
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
   },
-  { src = 'https://github.com/mrcjkb/rustaceanvim' },
+  { src = 'https://github.com/mrcjkb/rustaceanvim', version = 'v6.6.0' },
   { src = 'https://github.com/MunifTanjim/nui.nvim' },
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
   { src = 'https://github.com/windwp/nvim-autopairs' },
@@ -188,4 +190,7 @@ vim.pack.add {
   { src = 'https://github.com/famiu/bufdelete.nvim' },
   { src = 'https://github.com/echasnovski/mini.tabline' },
   { src = 'https://github.com/kdheepak/lazygit.nvim' },
+  { src = 'https://github.com/numToStr/Comment.nvim' },
+  { src = 'https://github.com/echasnovski/mini.notify' },
+  { src = 'https://github.com/folke/noice.nvim' },
 }

@@ -41,8 +41,8 @@ require('catppuccin').setup {
   },
   custom_highlights = function(_colors)
     return {
-      CmpDocNormal = { bg = '#414559' },
-      NormalFloat = { bg = '#414559' },
+      -- CmpDocNormal = { bg = '#414559' },
+      -- NormalFloat = { bg = '#414559' },
     }
   end,
 }

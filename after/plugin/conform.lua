@@ -20,11 +20,11 @@ require('conform').setup {
   },
 }
 
-vim.keymap.set('', '<leader>f', function()
+vim.keymap.set('', '<leader>bf', function()
   require('conform').format {
     async = true,
     lsp_format = 'fallback',
   }
 end, {
-  desc = '[F]ormat buffer',
+  desc = '[B]uffer [F]ormat',
 })

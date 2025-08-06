@@ -17,13 +17,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     map('gn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('ga', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
-    map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
     map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
     map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
     map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
     map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
     map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
     map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
+
+    map('<leader>lR', require('telescope.builtin').lsp_references, '[L]ist [R]eferences')
+    map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+
+    map('<leader>la', vim.lsp.buf.code_action, '[L]ist Code [A]ctions')
+    map('<leader>la', vim.lsp.buf.code_action, '[L]ist Code [A]ctions', 'v')
 
     local function client_supports_method(client, method, bufnr)
       if vim.fn.has 'nvim-0.11' == 1 then
