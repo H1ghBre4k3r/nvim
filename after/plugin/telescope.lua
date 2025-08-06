@@ -4,7 +4,6 @@ require('telescope').setup {
     ['ui-select'] = { require('telescope.themes').get_dropdown() },
   },
 }
-
 -- Build telescope-fzf-native if make is available
 if vim.fn.executable 'make' == 1 then
   vim.fn.system('cd ' .. vim.fn.stdpath 'data' .. '/site/pack/*/start/telescope-fzf-native.nvim && make')
@@ -28,11 +27,11 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {
 vim.keymap.set('n', '<leader>fs', builtin.builtin, {
   desc = '[F]ind Telescope',
 })
-vim.keymap.set('n', '<leader>fw', builtin.grep_string, {
-  desc = '[F]ind current [W]ord',
+vim.keymap.set('n', '<leader>fcw', builtin.grep_string, {
+  desc = '[F]ind [C]urrent [W]ord',
 })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {
-  desc = '[F]ind by [G]rep',
+vim.keymap.set('n', '<leader>fw', builtin.live_grep, {
+  desc = '[F]ind [W]ord',
 })
 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {
   desc = '[F]ind [D]iagnostics',

@@ -86,6 +86,22 @@ vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
 vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>')
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
 
+-- cycle through buffers
+vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>')
+vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>')
+
+vim.keymap.set('n', '<leader>c', function()
+  require('bufdelete').bufdelete(0, false)
+end)
+vim.keymap.set('n', '<leader>C', function()
+  require('bufdelete').bufdelete(0, false)
+end, {
+  desc = 'Close Buffer',
+})
+
+-- open lazygit
+vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>')
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {
@@ -169,4 +185,7 @@ vim.pack.add {
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
   { src = 'https://github.com/windwp/nvim-autopairs' },
   { src = 'https://github.com/akinsho/toggleterm.nvim' },
+  { src = 'https://github.com/famiu/bufdelete.nvim' },
+  { src = 'https://github.com/echasnovski/mini.tabline' },
+  { src = 'https://github.com/kdheepak/lazygit.nvim' },
 }

@@ -18,8 +18,9 @@ vim.g.rustaceanvim = vim.tbl_deep_extend('force', {}, {
           runBuildScripts = true,
         },
         -- Add clippy lints for Rust.
-        checkOnSave = {
-          allFeatures = true,
+        checkOnSave = true,
+        check = {
+          features = 'all',
           command = 'clippy',
           extraArgs = { '--no-deps' },
         },
