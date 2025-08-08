@@ -118,6 +118,7 @@ vim.pack.add {
   {
     src = 'https://github.com/catppuccin/nvim',
     name = 'catppuccin',
+    version = 'v1.11.0',
   },
   {
     src = 'https://github.com/NMAC427/guess-indent.nvim',
@@ -182,7 +183,7 @@ vim.pack.add {
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
   },
-  { src = 'https://github.com/mrcjkb/rustaceanvim', version = 'v6.6.0' },
+  { src = 'https://github.com/mrcjkb/rustaceanvim', version = 'v6.7.0' },
   { src = 'https://github.com/MunifTanjim/nui.nvim' },
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
   { src = 'https://github.com/windwp/nvim-autopairs' },
