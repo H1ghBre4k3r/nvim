@@ -101,6 +101,10 @@ end, {
   desc = 'Close Buffer',
 })
 
+vim.api.nvim_create_user_command('PackUpdate', function()
+  vim.pack.update()
+end, {})
+
 -- open lazygit
 vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>')
 
@@ -192,4 +196,5 @@ vim.pack.add {
   { src = 'https://github.com/kdheepak/lazygit.nvim' },
   { src = 'https://github.com/numToStr/Comment.nvim' },
   { src = 'https://github.com/folke/noice.nvim' },
+  { src = 'https://github.com/greggh/claude-code.nvim', version = 'v0.4.3' },
 }
