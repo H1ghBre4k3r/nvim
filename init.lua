@@ -11,7 +11,7 @@ vim.o.mouse = 'a'
 vim.o.showmode = false
 
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+    vim.o.clipboard = 'unnamedplus'
 end)
 
 vim.o.winborder = 'rounded'
@@ -46,9 +46,9 @@ vim.o.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.o.list = true
 vim.opt.listchars = {
-  tab = '» ',
-  trail = '·',
-  nbsp = '␣',
+    tab = '» ',
+    trail = '·',
+    nbsp = '␣'
 }
 
 -- Preview substitutions live, as you type!
@@ -66,27 +66,29 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {
-  desc = 'Open diagnostic [Q]uickfix list',
+    desc = 'Open diagnostic [Q]uickfix list'
 })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', {
-  desc = 'Exit terminal mode',
+    desc = 'Exit terminal mode'
 })
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', {
-  desc = 'Move focus to the left window',
+    desc = 'Move focus to the left window'
 })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', {
-  desc = 'Move focus to the right window',
+    desc = 'Move focus to the right window'
 })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', {
-  desc = 'Move focus to the lower window',
+    desc = 'Move focus to the lower window'
 })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {
-  desc = 'Move focus to the upper window',
+    desc = 'Move focus to the upper window'
 })
 
-vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
+vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', {
+    desc = 'New File'
+})
 
 -- toggle term configuration
 vim.keymap.set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<cr>')
@@ -97,110 +99,30 @@ vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>')
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>')
 
 vim.keymap.set('n', '<leader>c', function()
-  require('bufdelete').bufdelete(0, false)
+    require('bufdelete').bufdelete(0, false)
 end)
 vim.keymap.set('n', '<leader>C', function()
-  require('bufdelete').bufdelete(0, false)
+    require('bufdelete').bufdelete(0, false)
 end, {
-  desc = 'Close Buffer',
+    desc = 'Close Buffer'
 })
 
 vim.api.nvim_create_user_command('PackUpdate', function()
-  vim.pack.update()
+    vim.pack.update()
 end, {})
 
 -- open lazygit
 vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>')
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {
-    clear = true,
-  }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {
+        clear = true
+    }),
+    callback = function()
+        vim.hl.on_yank()
+    end
 })
 
-vim.pack.add {
-  {
-    src = 'https://github.com/catppuccin/nvim',
-    name = 'catppuccin',
-    version = 'v1.11.0',
-  },
-  {
-    src = 'https://github.com/NMAC427/guess-indent.nvim',
-  },
-  {
-    src = 'https://github.com/lewis6991/gitsigns.nvim',
-  },
-  {
-    src = 'https://github.com/folke/which-key.nvim',
-  },
-  {
-    src = 'https://github.com/nvim-lua/plenary.nvim',
-  },
-  {
-    src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
-  },
-  {
-    src = 'https://github.com/nvim-telescope/telescope-ui-select.nvim',
-  },
-  {
-    src = 'https://github.com/nvim-tree/nvim-web-devicons',
-  },
-  {
-    src = 'https://github.com/nvim-telescope/telescope.nvim',
-  },
-  {
-    src = 'https://github.com/folke/lazydev.nvim',
-  },
-  {
-    src = 'https://github.com/mason-org/mason.nvim',
-  },
-  {
-    src = 'https://github.com/mason-org/mason-lspconfig.nvim',
-  },
-  {
-    src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
-  },
-  {
-    src = 'https://github.com/j-hui/fidget.nvim',
-  },
-  {
-    src = 'https://github.com/saghen/blink.cmp',
-  },
-  {
-    src = 'https://github.com/neovim/nvim-lspconfig',
-  },
-  {
-    src = 'https://github.com/stevearc/conform.nvim',
-  },
-  {
-    src = 'https://github.com/L3MON4D3/LuaSnip',
-  },
-  {
-    src = 'https://github.com/folke/tokyonight.nvim',
-  },
-  {
-    src = 'https://github.com/folke/todo-comments.nvim',
-  },
-  {
-    src = 'https://github.com/echasnovski/mini.nvim',
-  },
-  {
-    src = 'https://github.com/nvim-treesitter/nvim-treesitter',
-  },
-  { src = 'https://github.com/mrcjkb/rustaceanvim', version = 'v6.7.0' },
-  { src = 'https://github.com/MunifTanjim/nui.nvim' },
-  { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
-  { src = 'https://github.com/windwp/nvim-autopairs' },
-  { src = 'https://github.com/akinsho/toggleterm.nvim' },
-  { src = 'https://github.com/famiu/bufdelete.nvim' },
-  { src = 'https://github.com/kdheepak/lazygit.nvim' },
-  { src = 'https://github.com/numToStr/Comment.nvim' },
-  { src = 'https://github.com/folke/noice.nvim' },
-  { src = 'https://github.com/greggh/claude-code.nvim', version = 'v0.4.3' },
-  { src = 'https://github.com/0oAstro/dim.lua' },
-  { src = 'https://github.com/H1ghBre4k3r/y-lang.nvim' },
-}
+-- Load all plugins from plugins/ directory
+require('core.plugins').setup()
