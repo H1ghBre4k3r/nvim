@@ -1,0 +1,1 @@
+require('y-lang').setup()

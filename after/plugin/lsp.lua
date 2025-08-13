@@ -7,6 +7,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     clear = true,
   }),
   callback = function(event)
+    vim.lsp.semantic_tokens.enable(true, {
+      bufnr = event.buf,
+    })
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
       vim.keymap.set(mode, keys, func, {

@@ -17,7 +17,11 @@ end)
 vim.o.winborder = 'rounded'
 
 -- Enable break indent
-vim.o.breakindent = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.breakindent = true
+vim.opt.cindent = true
 
 -- Save undo history
 vim.o.undofile = true
@@ -126,7 +130,7 @@ vim.pack.add {
   },
   {
     src = 'https://github.com/NMAC427/guess-indent.nvim',
-  }, -- Detect tabstop and shiftwidth automatically
+  },
   {
     src = 'https://github.com/lewis6991/gitsigns.nvim',
   },
@@ -197,4 +201,6 @@ vim.pack.add {
   { src = 'https://github.com/numToStr/Comment.nvim' },
   { src = 'https://github.com/folke/noice.nvim' },
   { src = 'https://github.com/greggh/claude-code.nvim', version = 'v0.4.3' },
+  { src = 'https://github.com/0oAstro/dim.lua' },
+  { src = 'https://github.com/H1ghBre4k3r/y-lang.nvim' },
 }
