@@ -19,6 +19,7 @@ return {
 
       require('mini.notify').setup()
       require('mini.indentscope').setup()
+      require('mini.tabline').setup()
     end,
   },
   {
