@@ -46,5 +46,8 @@ return {
   },
   {
     src = 'https://github.com/H1ghBre4k3r/y-lang.nvim',
+    config = function()
+      require('y-lang').setup()
+    end,
   },
 }

@@ -26,7 +26,7 @@ return {
             })
           end
 
-          map('gn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('lr', vim.lsp.buf.rename, '[R]ename')
           map('ga', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
           map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
@@ -184,6 +184,7 @@ return {
         keymap = {
           preset = 'enter',
           ['<C-y>'] = { 'select_and_accept' },
+          ['<Tab>'] = {},
         },
         appearance = {
           nerd_font_variant = 'mono',
@@ -197,6 +198,15 @@ return {
           documentation = {
             auto_show = true,
             auto_show_delay_ms = 200,
+          },
+          trigger = {
+            show_on_keyword = true,
+          },
+          list = {
+            selection = {
+              auto_insert = false,
+              -- preselect = false,
+            },
           },
         },
         sources = {
@@ -215,7 +225,7 @@ return {
           implementation = 'lua',
         },
         signature = {
-          enabled = true,
+          enabled = false,
         },
       }
     end,

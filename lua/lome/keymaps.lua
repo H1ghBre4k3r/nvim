@@ -31,6 +31,12 @@ vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
 -- cycle through buffers
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>')
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>')
+--
+-- fancy navigation through a file
+vim.keymap.set('n', '<C-d>', [[<C-d>zz]])
+vim.keymap.set('n', '<C-u>', [[<C-u>zz]])
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('n', '<leader>c', function()
   require('bufdelete').bufdelete(0, false)
