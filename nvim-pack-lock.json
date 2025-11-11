@@ -1,0 +1,64 @@
+{
+  "plugins": {
+    "Comment.nvim": [],
+    "LuaSnip": {
+      "rev": "7381330"
+    },
+    "blink.cmp": {
+      "rev": "d918ebd"
+    },
+    "bufdelete.nvim": [],
+    "catppuccin": {
+      "version": "'v1.11.0'"
+    },
+    "claude-code.nvim": {
+      "version": "'v0.4.3'"
+    },
+    "conform.nvim": {
+      "rev": "9d859cb"
+    },
+    "dim.lua": [],
+    "fidget.nvim": [],
+    "gitsigns.nvim": {
+      "rev": "1ee5c1f"
+    },
+    "guess-indent.nvim": [],
+    "lazydev.nvim": [],
+    "lazygit.nvim": [],
+    "mason-lspconfig.nvim": {
+      "rev": "6bdb14f"
+    },
+    "mason-tool-installer.nvim": [],
+    "mason.nvim": {
+      "rev": "ad7146a"
+    },
+    "mini.nvim": {
+      "rev": "9a2798a"
+    },
+    "neo-tree.nvim": {
+      "rev": "96bb26d"
+    },
+    "noice.nvim": [],
+    "nui.nvim": [],
+    "nvim-autopairs": [],
+    "nvim-lspconfig": {
+      "rev": "e688b48"
+    },
+    "nvim-treesitter": [],
+    "nvim-web-devicons": {
+      "rev": "b8221e4"
+    },
+    "plenary.nvim": [],
+    "rustaceanvim": {
+      "version": "'v6.7.0'"
+    },
+    "telescope-fzf-native.nvim": [],
+    "telescope-ui-select.nvim": [],
+    "telescope.nvim": [],
+    "todo-comments.nvim": [],
+    "toggleterm.nvim": [],
+    "tokyonight.nvim": [],
+    "which-key.nvim": [],
+    "y-lang.nvim": []
+  }
+}
