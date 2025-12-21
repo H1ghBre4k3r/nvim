@@ -7,16 +7,6 @@ return {
         n_lines = 500,
       }
       require('mini.surround').setup()
-
-      local statusline = require 'mini.statusline'
-      statusline.setup {
-        use_icons = vim.g.have_nerd_font,
-      }
-
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-
       require('mini.notify').setup()
       require('mini.indentscope').setup()
       require('mini.tabline').setup()
@@ -42,6 +32,57 @@ return {
     src = 'https://github.com/NMAC427/guess-indent.nvim',
     config = function()
       require('guess-indent').setup {}
+    end,
+  },
+  {
+    src = 'https://github.com/nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'catppuccin',
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          -- globalstatus = true,
+          refresh = {
+            statusline = 1000,
+            tabline = 1000,
+            winbar = 1000,
+          },
+        },
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = {
+            {
+              'filename',
+              file_status = true,
+              newfile_status = true,
+              path = 1,
+              symbols = {
+                modified = '[+]',
+                readonly = '[-]',
+                unnamed = '[No Name]',
+                newfile = '[New]',
+              },
+            },
+          },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { 'filename' },
+          lualine_x = { 'location' },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        tabline = {},
+        winbar = {},
+        inactive_winbar = {},
+        extensions = { 'neo-tree', 'nvim-tree', 'toggleterm' },
+      }
     end,
   },
 }
