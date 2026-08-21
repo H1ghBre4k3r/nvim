@@ -1,4 +1,12 @@
 -- Theme plugins
+local function trans_background()
+  if vim.g.neovide then
+    return false
+  else
+    return true
+  end
+end
+
 return {
   {
     src = 'https://github.com/catppuccin/nvim',
@@ -6,7 +14,7 @@ return {
     version = 'v1.11.0',
     config = function()
       require('catppuccin').setup {
-        transparent_background = true,
+        transparent_background = trans_background(),
         integrations = {
           aerial = true,
           alpha = true,

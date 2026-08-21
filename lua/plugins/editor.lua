@@ -85,4 +85,10 @@ return {
       }
     end,
   },
+  {
+    src = 'https://github.com/sphamba/smear-cursor.nvim',
+    config = function()
+      require('smear_cursor').setup {}
+    end,
+  },
 }

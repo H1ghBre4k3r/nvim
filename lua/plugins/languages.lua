@@ -2,7 +2,7 @@
 return {
   {
     src = 'https://github.com/mrcjkb/rustaceanvim',
-    version = 'v6.7.0',
+    version = vim.version.range '^9',
     config = function()
       vim.g.rustaceanvim = vim.tbl_deep_extend('force', {}, {
         server = {
@@ -33,7 +33,7 @@ return {
               procMacro = {
                 enable = true,
                 ignored = {
-                  ['async-trait'] = { 'async_trait' },
+                  -- ['async-trait'] = { 'async_trait' },
                   ['napi-derive'] = { 'napi' },
                   ['async-recursion'] = { 'async_recursion' },
                 },
@@ -48,6 +48,19 @@ return {
     src = 'https://github.com/H1ghBre4k3r/y-lang.nvim',
     config = function()
       require('y-lang').setup()
+    end,
+  },
+  {
+    src = 'https://github.com/mrcjkb/haskell-tools.nvim',
+
+    config = function()
+      vim.g.haskell_tools = {
+        tools = {
+          codeLens = {
+            autoRefresh = false,
+          },
+        },
+      }
     end,
   },
 }

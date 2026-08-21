@@ -63,3 +63,6 @@ vim.o.cursorline = false
 vim.o.scrolloff = 16
 
 vim.o.confirm = true
+
+vim.o.shell = 'zsh'
+vim.o.shellcmdflag = '-l -c'

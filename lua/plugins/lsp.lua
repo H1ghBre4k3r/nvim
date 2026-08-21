@@ -171,6 +171,9 @@ return {
     end,
   },
   {
+    src = 'https://github.com/saghen/blink.lib',
+  },
+  {
     src = 'https://github.com/saghen/blink.cmp',
     config = function()
       -- Configure completion (LuaSnip already added above)
