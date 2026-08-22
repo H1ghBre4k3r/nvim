@@ -156,6 +156,15 @@ return {
           end,
         },
       }
+
+      if vim.fn.executable('sourcekit-lsp') == 1 then
+        vim.lsp.config('sourcekit', {
+          capabilities = capabilities,
+        })
+        vim.lsp.enable('sourcekit')
+      else
+        vim.notify('sourcekit-lsp not found in PATH', vim.log.levels.WARN)
+      end
     end,
   },
   {
