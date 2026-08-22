@@ -2,13 +2,12 @@
 return {
   {
     src = 'https://github.com/mason-org/mason.nvim',
-    config = function()
-      require('mason').setup {}
-    end,
   },
   {
     src = 'https://github.com/neovim/nvim-lspconfig',
     config = function()
+      require('mason').setup {}
+
       -- LSP configuration
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', {
@@ -157,11 +156,11 @@ return {
         },
       }
 
-      if vim.fn.executable('sourcekit-lsp') == 1 then
+      if vim.fn.executable 'sourcekit-lsp' == 1 then
         vim.lsp.config('sourcekit', {
           capabilities = capabilities,
         })
-        vim.lsp.enable('sourcekit')
+        vim.lsp.enable 'sourcekit'
       else
         vim.notify('sourcekit-lsp not found in PATH', vim.log.levels.WARN)
       end
